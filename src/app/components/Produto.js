@@ -49,13 +49,13 @@ const Produto = ({item}) => {
      </div>
     
  </div>
- {modalItem && <div className="fixed inset-0 flex bg-black bg-opacity-10 backdrop-blur-sm justify-center h-screen overflow-y-scroll">
+ {modalItem && <div className="fixed inset-0 flex bg-black bg-opacity-10 backdrop-blur-sm justify-center">
       <div className='w-full bg-white max-w-md relative mt-2 rounded-md overflow-hidden '>
         <div className='relative'>
             <img src={item.urlImage} alt={`imagem do ${item.produto}`} />
             <button className='absolute top-2 right-2 bg-red-600 rounded-full w-8 h-8 text-white' id='btnfechar' onClick={()=>setModalItem(false)}>X</button>
         </div>
-        <div className='p-2'>
+        <div className='p-2 max-h-[200px] overflow-y-scroll'>
             <div>
             <h1 className='text-xl font-bold'>{item.produto}</h1>
             <p className='mt-2 font-medium'>R$ {Number(item.preco).toFixed(2)}</p>
