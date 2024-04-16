@@ -142,14 +142,14 @@ const Produtos = () => {
 *Rua*: ${rua}
 *Número*: ${numero}
 *Bairro*: ${bairro}
-      ${complemento ? `*Complemento*: ${complemento}`: `` }
-      ${referencia ? `*Ponto de referência*: ${referencia}`: `` }
+${complemento ? `*Complemento*: ${complemento}`: `` }
+${referencia ? `*Ponto de referência*: ${referencia}`: `` }
 *Forma de pagamento*: ${pagamento}
-      ${troco ? `*Troco para*: ${troco}`:""}
-      ----------------------------------
+${troco ? `*Troco para*: ${troco}`:""}
+      ----------------------------------------------
       `
       
-      const custos=`
+const custos=`
 *Custos*
 *Preço dos Produtos:* R$ ${Number(total).toFixed(2)}
 *Preço da Entrega:* R$ 3.00
@@ -159,7 +159,7 @@ Após enviar o pedido, aguarde que já iremos lhe atender.
       `
       
 const cartItens= infos.cart.map((item)=>{
-              return (
+return (
 `( 1 x ) - ${item.produto} 
 ${item.observacao}
 `)})
