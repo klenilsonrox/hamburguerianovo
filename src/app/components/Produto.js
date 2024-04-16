@@ -22,6 +22,7 @@ const Produto = ({item}) => {
             produto:item.produto,
             id:item.id,
             preco:item.preco,
+            image:item.urlImage,
             observacao
         }
         
@@ -42,17 +43,17 @@ const Produto = ({item}) => {
     <>
     <div key={item.id} className=' py-2 flex gap-2 cursor-pointer items-center justify-between md:items-start border-b ' onClick={()=>openModalItem(item)}>
      <img src={item.urlImage} alt={`imagem do ${item.produto}`} className='max-w-[90px] max-h-[90px] lg:max-w-[110px] lg:max-h-[110px]  rounded-md order-2 lg:order-none'/>
-     <div className='flex flex-col justify-between gap-1'>
+     <div className='flex flex-col justify-between gap-2'>
         <h1>{item.produto}</h1>
         <p className="text-[14px] text-gray-500 text-truncate-2-line">{item.descricao}</p>
-        <p>R$ {Number(item.preco).toFixed(2)}</p>
+        <p className='font-medium'>R$ {Number(item.preco).toFixed(2)}</p>
      </div>
     
  </div>
  {modalItem && <div className="fixed inset-0 flex bg-black bg-opacity-10 backdrop-blur-sm justify-center">
       <div className='w-full bg-white max-w-md relative mt-2 rounded-md overflow-hidden '>
         <div className='relative'>
-            <img src={item.urlImage} alt={`imagem do ${item.produto}`} />
+            <img src={item.urlImage} alt={`imagem do ${item.produto}`} className='w-full'/>
             <button className='absolute top-2 right-2 bg-red-600 rounded-full w-8 h-8 text-white' id='btnfechar' onClick={()=>setModalItem(false)}>X</button>
         </div>
         <div className='p-2 max-h-[200px] overflow-y-scroll'>

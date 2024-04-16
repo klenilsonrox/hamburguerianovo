@@ -12,7 +12,7 @@ export const dados = [
     },
     {
       id: 2,
-      urlImage: "/images/misto.jpg",
+      urlImage: "/images/misto.png",
       produto: "Misto especial",
       descricao:
         "Pão, molho especial, ovo, 2 mussarelas, 2 presuntos, alface, tomate , batata palha e milho.",
@@ -285,6 +285,7 @@ export const dados = [
 const [cart,setCart]=useState([])
 const [itemModal,setItem]=useState("")
 const [observacao,setObservacao]=useState("")
+const [cartOpen,setCartOpen]=useState(false)
 
 
 function addItemToCart(item){
@@ -306,8 +307,10 @@ useEffect(() => {
     }
 }, []);
 
+
+
     return (
-        <CartContext.Provider value={{cart,addItemToCart,dados}}>
+        <CartContext.Provider value={{cart,addItemToCart,dados,cartOpen,setCartOpen}}>
             {children}
         </CartContext.Provider>
     )
