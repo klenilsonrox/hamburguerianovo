@@ -76,9 +76,10 @@ const Produtos = () => {
                     <div>
                         <p>( <span className='text-red-600 font-medium'>1x</span> ) {item.produto}</p>
                         <p className='font-medium'>R$ {Number(item.preco).toFixed(2)}</p>
+                        {item.observacao && <p>{item.observacao}</p>}
                     </div>
                 </div>
-                <FaTrash className='text-red-600'/>
+                <FaTrash className='text-red-600 cursor-pointer'/>
             </div>
         ) )}
     </div>
