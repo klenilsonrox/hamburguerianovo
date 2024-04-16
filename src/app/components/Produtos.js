@@ -9,6 +9,7 @@ const Produtos = () => {
     const infos=useContext(CartContext)
     const [produtos,setProdutos]=useState([])
     const [carrinho,setCarrinho]=useState([])
+    const [total,setTotal]=useState(0)
    
 
     useEffect(()=>{
@@ -16,7 +17,10 @@ const Produtos = () => {
         setProdutos(filtrados)
     },[])
 
-    
+    useEffect(()=>{
+        const valorTotal = infos.cart.reduce((acc,it)=>acc + Number(it.preco),0)
+        setTotal(valorTotal)
+    },[infos.cart])
 
     useEffect(()=>{
         const dadosExist = localStorage.getItem("cart")
@@ -49,10 +53,9 @@ const Produtos = () => {
   <button className='categ' id='macarrao' onClick={selecionarFiltro}>Omeletes</button>
   <button className='categ' id='bebidas' onClick={selecionarFiltro}>Bebidas</button>
   <button className='categ' id='bomboniere' onClick={selecionarFiltro}>Bomboniere</button>
-  <button onClick={()=>infos.setCartOpen(true)}>carrinho</button>
 </div>
 
-<div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full mt-4'>
+<div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full mt-4 my-16'>
 {produtos.map(item=> (
 <Produto item={item}/>
 ) )}
@@ -62,12 +65,18 @@ const Produtos = () => {
 
 
 {/* inicio do carrinho */}
-{infos.cartOpen && <div className='fixed inset-0 bg-black flex bg-opacity-20 backdrop-blur-sm' id='cart' onClick={closeCartModal}>
+{infos.cartOpen && <div className='fixed inset-0 bg-black flex bg-opacity-20 backdrop-blur-sm z-50' id='cart' onClick={closeCartModal}>
 <div className='bg-white w-full max-w-md absolute right-0 bottom-0 h-screen flex flex-col justify-between'>
     <div className='flex justify-between px-4 border-b py-4'>
         <h1 className='font-semibold'>Seu carrinho</h1>
         <button className='font-medium text-xl text-red-600' onClick={()=>infos.setCartOpen(false)}>X</button>
     </div>
+    {infos.cart.length < 1 && <div className='mx-auto'>
+        <img src="/images/cartvazio.png" alt="" />
+        <div className='flex items-center justify-center my-4'>
+        <a href="/">Adicionar itens</a>
+        </div>
+    </div> }
     <div className='flex-1 px-4 max-h-[700px] overflow-y-scroll'>
         {infos.cart && infos.cart.map(item=> (
             <div className='border-b py-4 flex justify-between items-center'>
@@ -79,17 +88,41 @@ const Produtos = () => {
                         {item.observacao && <p>{item.observacao}</p>}
                     </div>
                 </div>
-                <FaTrash className='text-red-600 cursor-pointer'/>
+                <FaTrash className='text-red-600 cursor-pointer' onClick={()=>infos.removeItemFromCart(item)}/>
             </div>
         ) )}
     </div>
-    <div className='flex justify-between p-4 border-t'>
+    {infos.cart.length > 0 && <div>
+        <h1 className='px-4 font-bold text-xl'>Total R$ {Number(total).toFixed(2)}</h1>
+        <div className='flex justify-between p-4 border-t'>
        <button className='bg-green-600 px-6 py-2 rounded-md font-medium text-white'>Continuar</button>
-       <button>← Voltar</button>
+       <button onClick={()=>infos.setCartOpen(false)}>← Voltar</button>
     </div>
+    </div> }
 </div>
 </div>}
 {/* final do carrinho */}
+
+<div className='flex items-center fixed bottom-0 right-0 left-0 border-t px-4 py-2 z-10 bg-white'>
+<div className='max-w-7xl mx-auto flex w-full items-center justify-between'>
+        <div>
+            <p>{infos.cart.length} {infos.cart.length >1 ? "itens":"item"}</p>
+            <p className='font-medium'>R$ {Number(total).toFixed(2)}</p>
+        </div>
+        <button className='bg-red-600 px-10 py-2 rounded-md text-white font-medium' onClick={()=>infos.setCartOpen(true)}>Ver meu carrinho</button>
+</div>
+</div>
+
+
+{/* inicio form dados */}
+
+<div className='inset-0 fixed bg-black flex justify-center z-10'>
+        <div className='max-w-md w-full bg-white'>
+            ola
+        </div>
+</div>
+
+{/* final form dados */}
 
 </>
   );

@@ -307,10 +307,18 @@ useEffect(() => {
     }
 }, []);
 
+function removeItemFromCart(itemToRemove) {
+  setCart(prev => {
+      const updatedCart = prev.filter(item => item !== itemToRemove);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      return updatedCart;
+  });
+}
+
 
 
     return (
-        <CartContext.Provider value={{cart,addItemToCart,dados,cartOpen,setCartOpen}}>
+        <CartContext.Provider value={{cart,addItemToCart,dados,cartOpen,setCartOpen,removeItemFromCart}}>
             {children}
         </CartContext.Provider>
     )

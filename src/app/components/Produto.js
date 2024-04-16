@@ -41,7 +41,7 @@ const Produto = ({item}) => {
    
   return (
     <>
-    <div key={item.id} className=' py-2 flex gap-2 cursor-pointer items-center justify-between md:items-start border-b ' onClick={()=>openModalItem(item)}>
+    <div key={item.id} className=' py-2 flex gap-2 cursor-pointer items-center justify-between md:items-start border-b' onClick={()=>openModalItem(item)}>
      <img src={item.urlImage} alt={`imagem do ${item.produto}`} className='max-w-[90px] max-h-[90px] lg:max-w-[110px] lg:max-h-[110px]  rounded-md order-2 lg:order-none'/>
      <div className='flex flex-col justify-between gap-2'>
         <h1>{item.produto}</h1>
@@ -50,7 +50,7 @@ const Produto = ({item}) => {
      </div>
     
  </div>
- {modalItem && <div className="fixed inset-0 flex bg-black bg-opacity-10 backdrop-blur-sm justify-center">
+ {modalItem && <div className="fixed inset-0 flex bg-black bg-opacity-10 backdrop-blur-sm justify-center z-30">
       <div className='w-full bg-white max-w-md relative mt-2 rounded-md overflow-hidden '>
         <div className='relative'>
             <img src={item.urlImage} alt={`imagem do ${item.produto}`} className='w-full'/>
