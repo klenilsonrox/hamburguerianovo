@@ -116,11 +116,11 @@ const Produtos = () => {
 
 {/* inicio form dados */}
 
-<div className='inset-0 fixed bg-black flex justify-center z-10'>
+{/* <div className='inset-0 fixed bg-black flex justify-center z-10'>
         <div className='max-w-md w-full bg-white'>
             ola
         </div>
-</div>
+</div> */}
 
 {/* final form dados */}
 
