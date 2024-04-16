@@ -301,9 +301,9 @@ function addItemToCart(item){
 
 
 useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart"));
+    const storedCart = localStorage.getItem("cart");
     if (storedCart) {
-        setCart(storedCart);
+        setCart(JSON.parse(storedCart));
     }
 }, []);
 
