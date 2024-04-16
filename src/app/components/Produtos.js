@@ -213,7 +213,7 @@ const phone = "+5531992311170"
 
 
 {/* inicio do carrinho */}
-{infos.cartOpen && <div className='fixed inset-0 bg-black flex bg-opacity-20 backdrop-blur-sm z-20' id='cart' onClick={closeCartModal}>
+{infos.cartOpen && <div className='fixed inset-0 bg-black flex overflow-hidden bg-opacity-20 backdrop-blur-sm z-20 ' id='cart' onClick={closeCartModal}>
 <div className='bg-white w-full max-w-md absolute right-0 bottom-0 h-screen flex flex-col justify-between'>
     <div className='flex justify-between px-4 border-b py-4'>
         <h1 className='font-semibold'>Seu carrinho</h1>
@@ -264,7 +264,7 @@ const phone = "+5531992311170"
 
 {/* inicio form dados */}
 
-{modalDados && <div className='inset-0 fixed bg-black flex justify-center z-30 backdrop-blur-sm bg-opacity-20' id='modalDados' onClick={closeModalDados}>
+{modalDados && <div className='inset-0 fixed bg-black flex justify-center z-30 backdrop-blur-sm overflow-hidden bg-opacity-20' id='modalDados' onClick={closeModalDados}>
 
 <div className='max-w-md w-full bg-white flex flex-col '>
 
@@ -299,7 +299,7 @@ const phone = "+5531992311170"
 
 {/* inicio form endereço */}
 
-{modalEndereco && <div className='inset-0 fixed bg-black flex justify-center z-30 backdrop-blur-sm bg-opacity-20' id='modalDados' onClick={closeModalDados}>
+{modalEndereco && <div className='inset-0 fixed bg-black flex justify-center z-30 backdrop-blur-sm overflow-hidden bg-opacity-20' id='modalDados' onClick={closeModalDados}>
 
 <div className='max-w-md w-full bg-white flex flex-col '>
 
@@ -364,7 +364,7 @@ const phone = "+5531992311170"
 {/* final modal erro */}
 
 {/* inicio modal resume */}
-{modalResumo && <div className='inset-0 fixed bg-black flex justify-center backdrop-blur-sm bg-opacity-20 z-40'>
+{modalResumo && <div className='inset-0 fixed bg-black flex justify-center backdrop-blur-sm overflow-hidden bg-opacity-20 z-40'>
     <div className='max-w-md w-full bg-white relative flex flex-col'>
 
        <div className='flex justify-between items-center bg-green-200 py-3 px-2'>
@@ -445,7 +445,7 @@ const phone = "+5531992311170"
 
 {/* inicio modal checkout */}
 
-{/* <div className='inset-0 fixed bg-black flex justify-center backdrop-blur-sm bg-opacity-20 z-50'>
+{/* <div className='inset-0 fixed bg-black flex justify-center backdrop-blur-sm overflow-hidden bg-opacity-20 z-50'>
 
 </div> */}
 
