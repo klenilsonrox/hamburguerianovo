@@ -371,8 +371,8 @@ const phone = "+5531992311170"
 {/* final modal endereço */}
 
 {/* inicio modal erro */}
-{erro && <div className='inset-0 fixed bg-white flex justify-center items-center backdrop-blur-sm h-10 max-w-md mx-auto z-50 anima p-2'>
-<p className='border-b-4 border-red-600'>{erro}</p>
+{erro && <div className='inset-0 fixed bg-white flex justify-center items-start backdrop-blur-sm max-w-md mx-auto z-50 anima h-14'>
+<p className='border-b-4 border-red-600 p-2 text-center font-medium'>{erro}</p>
 </div>}
 {/* final modal erro */}
 
