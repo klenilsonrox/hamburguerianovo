@@ -64,7 +64,7 @@ const Produto = ({item}) => {
             </div>
             {item.categoria!=="bebidas" && item.categoria!=="bomboniere" && <div className='py-4'>
                 <p className='font-medium'>Alguma observação sobre o seu pedido?</p>
-                <textarea name="" id="" cols="30" rows="5" className='bg-slate-200 w-full mt-2 rounded-md p-2' placeholder='ex: sem milho, sem salada' value={observacao} onChange={({target})=>setObservacao(target.value)}></textarea>
+                <textarea name="" id="" cols="30" rows="3" className='bg-slate-200 w-full mt-2 rounded-md p-2' placeholder='ex: sem milho, sem salada' value={observacao} onChange={({target})=>setObservacao(target.value)}></textarea>
             </div>}
         </div>
         <div className='absolute bottom-4 right-4'>
