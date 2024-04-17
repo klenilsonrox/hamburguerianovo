@@ -207,7 +207,7 @@ const phone = "+5531992311170"
     <>
     <div className="x-4 max-w-7xl mx-auto">
 
-<div className='flex gap-4 clear-start py-4 max-w-sm overflow-x-scroll lg:max-w-7xl lg:overflow-x-auto'>
+<div className='flex gap-4 clear-start py-4 max-w-sm  lg:max-w-7xl overflow-x-auto scrollbar-thin scrollbar-thumb-white'>
   <button className='ativo categ' id='sanduiches' onClick={selecionarFiltro}>Sanduíches</button>
   <button className='categ' id='porcoes' onClick={selecionarFiltro}>Porções</button>
   <button className='categ' id='omeletes' onClick={selecionarFiltro}>Omeletes</button>

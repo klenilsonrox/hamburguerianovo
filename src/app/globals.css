@@ -31,3 +31,25 @@
       transform: translate3d(0,0,0);
     }
   }
+
+
+
+  /* Estilizando a barra de rolagem */
+::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+/* Estilizando o botão de rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: white; /* Cor da barra de rolagem */
+}
+
+/* Estilizando a trilha da rolagem */
+::-webkit-scrollbar-track {
+  background: transparent; /* Cor de fundo da trilha da rolagem */
+}
+
+/* Estilizando os cantos da barra de rolagem */
+::-webkit-scrollbar-corner {
+  background: transparent; /* Cor de fundo dos cantos da barra de rolagem */
+}
