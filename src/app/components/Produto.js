@@ -50,12 +50,14 @@ const Produto = ({item}) => {
      </div>
     
  </div>
- {modalItem && <div className="fixed inset-0 flex bg-black bg-opacity-10 backdrop-blur-sm justify-center z-30">
-      <div className='w-full bg-white max-w-md relative rounded-md min-h-screen overflow-y-scroll '>
+ {modalItem && <div className="fixed inset-0 flex bg-black bg-opacity-10 backdrop-blur-sm justify-center z-30 h-screen overflow-y-scroll">
+      <div className='w-full bg-white max-w-md relative rounded-md '>
+
         <div className='relative'>
             <img src={item.urlImage} alt={`imagem do ${item.produto}`} className='w-full'/>
             <button className='absolute top-2 right-2 bg-red-600 rounded-full w-8 h-8 text-white' id='btnfechar' onClick={()=>setModalItem(false)}>X</button>
         </div>
+        
         <div className='p-2 '>
             <div>
             <h1 className='text-xl font-bold'>{item.produto}</h1>
