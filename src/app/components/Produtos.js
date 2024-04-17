@@ -133,9 +133,9 @@ const Produtos = () => {
       
             const horaCerta = `⏰${hora > 10 ? `${hora}`:`0${hora}`}`+":"+`${minutos > 10 ? `${minutos}`:`0${minutos}`} `
        
-      const msg = `*Pedido:*
-      `
-      const dadosCliente=`
+const msg = `*Pedido:*
+`
+const dadosCliente=`
 *Cliente:* ${nome}
 *Horário do pedido*:${horaCerta}
 *Tipo de serviço:* Delivery
@@ -184,7 +184,7 @@ const phone = "+5531992311170"
 
       const carroVazio = []
       
-      window.location.href=`https://wa.me/${phone}?text=${dadosClient} ${msgResumo} ${carrinho} ${precos}`
+      window.location.href=`https://wa.me/${phone}?text=${dadosClient}${msgResumo}${carrinho}${precos}`
       localStorage.setItem("cart", carroVazio)
             router.push("/")
         }
