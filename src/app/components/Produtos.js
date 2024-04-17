@@ -35,6 +35,19 @@ const Produtos = () => {
     const handlePagamentoChange = (event) => {
         setPagamento(event.target.value);
       };
+
+      useEffect(()=>{
+        const dadosExist = localStorage.getItem("dados")
+        if(dadosExist){
+            const user = JSON.parse(dadosExist)
+            setNome(user.nome)
+            setRua(user.rua)
+            setComplemento(user.complemento)
+            setBairro(user.bairro)
+            setReferencia(user.referencia)
+            setNumero(user.numero)
+        }
+      },[])
    
 
     useEffect(()=>{
@@ -146,10 +159,10 @@ ${complemento ? `*Complemento*: ${complemento}`: `` }
 ${referencia ? `*Ponto de referência*: ${referencia}`: `` }
 *Forma de pagamento*: ${pagamento}
 ${troco ? `*Troco para*: ${troco}`:""}
-      ----------------------------------------------
-      `
-      
+----------------------------------------------
+`    
 const custos=`
+----------------------------------------------
 *Custos*
 *Preço dos Produtos:* R$ ${Number(total).toFixed(2)}
 *Preço da Entrega:* R$ 3.00
@@ -160,7 +173,7 @@ Após enviar o pedido, aguarde que já iremos lhe atender.
       
 const cartItens= infos.cart.map((item)=>{
 return (
-`( 1 x ) - ${item.produto} 
+`1x - ${item.produto} 
 ${item.observacao}
 `)})
       
