@@ -58,7 +58,7 @@ const Produto = ({item}) => {
             <button className='absolute top-2 right-2 bg-red-600 rounded-full w-8 h-8 text-white' id='btnfechar' onClick={()=>setModalItem(false)}>X</button>
         </div>
 
-        <div className='p-2 flex-1'>
+        <div className='p-2'>
             <div>
             <h1 className='text-xl font-bold'>{item.produto}</h1>
             <p className='mt-2 font-medium'>R$ {Number(item.preco).toFixed(2)}</p>
